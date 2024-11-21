@@ -26,7 +26,7 @@ export const tasksSlice = createSlice({
         //Editar tarea
         editTask: (state, action) => {
             const {id, title, description} = action.payload;
-            const foundTask = state.find(task => task.id = id)
+            const foundTask = state.tasks.find(task => task.id = id)
             if(foundTask){
                 foundTask.title = title;
                 foundTask.description = description;
@@ -34,9 +34,9 @@ export const tasksSlice = createSlice({
         },
         //Eliminar tarea
         deleteTask: (state, action) => {
-            const taskFound = state.find(task => task.id === action.payload);
+            const taskFound = state.tasks.find(task => task.id === action.payload);
             if (taskFound){
-                state.splice(state.indexOf(taskFound), 1);
+                state.tasks.splice(state.tasks.indexOf(taskFound), 1);
             }
         },
     }
