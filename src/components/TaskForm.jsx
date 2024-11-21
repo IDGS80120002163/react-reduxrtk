@@ -24,7 +24,7 @@ const TaskForm = () => {
   //Agregamos un useEffect
   useEffect(() => {
     if(params.id){
-        setTask(tasks.find((task) => task.id))
+        setTask(tasks.tasks.find((task) => task.id))
     }
   }, [])
 
